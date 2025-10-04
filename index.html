@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UMD Water Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+      <aside class="sidebar">
+        <nav style="display: flex; flex-direction: column; align-items: center; gap: 40px; padding-top: 40px;">
+            <a class="icon" href="#precip-section" title="Precipitation">🌧️</a>
+            <a class="icon" href="#sensor-section" title="Sensor Data">📈</a>
+            <a class="icon" href="#gauge-section" title="Gauges">📊</a>
+          </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <img src="umd_loog.webp" alt="UMD Logo" style="position: absolute; top: 20px; right: 30px; width: 50px; height: 50px;" />
+        <h1>UMD Campus Water Dashboard</h1>
+        <p>Explore trends in water quality, quantity, and precipitation across UMD using real-time sensor data.</p>
+      </header>
+
+      <section class="card" id="precip-section">
+        <h2>🌧️ Precipitation History</h2>
+        <div id="precip-chart"></div>
+      </section>
+
+      <section class="card" id="sensor-section">
+        <h2>📈 Sensor Data</h2>
+        <div class="controls">
+          <label for="var-select">Select Variable:</label>
+          <select id="var-select"></select>
+        </div>
+        <div id="sensor-chart"></div>
+      </section>
+
+      <section class="card" id="gauge-section">
+        <h2>📊 Monthly Gauges</h2>
+        <div class="controls">
+          <label for="month-select">Select Month:</label>
+          <select id="month-select"></select>
+        </div>
+        <div class="gauges">
+          <div id="gauge-mean"></div>
+          <div id="gauge-max"></div>
+          <div id="gauge-min"></div>
+        </div>
+      </section>
+
+      <footer>
+        References
+
+        Built by UMD SIRJ Lab | Powered by Plotly.js
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
